@@ -74,3 +74,6 @@ chown -R www-data:www-data /var/www/html/app
 echo "running cron" && cron -f &
 
 exec "$@"
+
+echo "Clearing cache"
+php /var/www/html/app/console cache:clear
